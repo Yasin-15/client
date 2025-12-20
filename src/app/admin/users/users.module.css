@@ -1,0 +1,230 @@
+.container {
+    min-height: 100vh;
+    background: var(--gray-50);
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.headerContent {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.backButton {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+.backButton:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+}
+
+.headerContent h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.headerContent p {
+    opacity: 0.9;
+    font-size: 1.125rem;
+}
+
+.main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.closeAlert {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    opacity: 0.7;
+}
+
+.closeAlert:hover {
+    opacity: 1;
+}
+
+.statCard {
+    text-align: center;
+    padding: 2rem !important;
+    transition: all 0.3s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.statIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.statNumber {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.section {
+    margin-top: 2rem;
+}
+
+.sectionTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--gray-900);
+}
+
+.emptyState {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.emptyIcon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.emptyState h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+    color: var(--gray-600);
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.usersTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.usersTable thead {
+    background: var(--gray-100);
+}
+
+.usersTable th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--gray-700);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--gray-300);
+}
+
+.usersTable td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-900);
+}
+
+.usersTable tbody tr:hover {
+    background: var(--gray-50);
+}
+
+.userName {
+    font-weight: 600;
+}
+
+.roleSelect {
+    padding: 0.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    background: white;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.roleSelect:hover:not(:disabled) {
+    border-color: var(--primary);
+}
+
+.roleSelect:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.actionBtn {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--gray-300);
+    background: white;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.actionBtn:hover:not(:disabled) {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: scale(1.1);
+}
+
+.actionBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.dangerBtn:hover:not(:disabled) {
+    background: var(--error);
+    border-color: var(--error);
+}
+
+@media (max-width: 768px) {
+    .usersTable {
+        font-size: 0.875rem;
+    }
+
+    .usersTable th,
+    .usersTable td {
+        padding: 0.75rem 0.5rem;
+    }
+}
