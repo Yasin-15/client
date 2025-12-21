@@ -75,6 +75,16 @@ export default function OfficerResultsPage() {
                                 : `Live monitoring • Last updated: ${new Date().toLocaleTimeString()}`}
                         </p>
                     </div>
+                    {!election?.resultsPublished && (
+                        <button
+                            onClick={fetchResults}
+                            className={`btn btn-outline flex items-center gap-2 ${loadingData ? 'opacity-50' : ''}`}
+                            disabled={loadingData}
+                        >
+                            <span className={loadingData ? 'animate-spin' : ''}>🔄</span>
+                            Refresh Scores
+                        </button>
+                    )}
                 </div>
             </header>
 

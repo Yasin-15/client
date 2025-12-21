@@ -185,9 +185,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto text-center">
           <p className="mb-4">&copy; 2025 Online Voting System. All rights reserved.</p>
           <div className="flex justify-center gap-8 text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Contact Us</a>
+            <a href="/about" className="hover:text-white transition-colors">About Us</a>
+            <a href="/faq" className="hover:text-white transition-colors">FAQ</a>
+            <a href="/contact" className="hover:text-white transition-colors">Contact Support</a>
           </div>
         </div>
       </footer>

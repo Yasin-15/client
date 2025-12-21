@@ -39,7 +39,9 @@ export const authAPI = {
     register: (data) => api.post('/auth/register', data),
     login: (data) => api.post('/auth/login', data),
     getMe: () => api.get('/auth/me'),
-    logout: () => api.post('/auth/logout')
+    logout: () => api.post('/auth/logout'),
+    updateDetails: (data) => api.put('/auth/updatedetails', data),
+    updatePassword: (data) => api.put('/auth/updatepassword', data)
 };
 
 // Election API
@@ -80,7 +82,9 @@ export const adminAPI = {
     activateUser: (id) => api.put(`/admin/users/${id}/activate`),
     updateUserRole: (id, role) => api.put(`/admin/users/${id}/role`, { role }),
     getStats: () => api.get('/admin/stats'),
-    getAuditLogs: (params) => api.get('/admin/audit-logs', { params })
+    getAuditLogs: (params) => api.get('/admin/audit-logs', { params }),
+    getSettings: () => api.get('/admin/settings'),
+    updateSettings: (data) => api.put('/admin/settings', data)
 };
 
 export default api;

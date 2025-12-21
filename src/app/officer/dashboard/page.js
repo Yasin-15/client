@@ -30,7 +30,10 @@ export default function OfficerDashboard() {
     const fetchElections = async () => {
         try {
             const response = await electionAPI.getAll();
-            setElections(response.data.data);
+            const officerElections = user.role === 'admin'
+                ? response.data.data
+                : response.data.data.filter(e => e.createdBy?._id === user._id || e.createdBy === user._id);
+            setElections(officerElections);
         } catch (err) {
             setError('Failed to load elections');
             console.error(err);
@@ -93,6 +96,13 @@ export default function OfficerDashboard() {
                         <div className="statNumber">{closedElections.length}</div>
                         <div className="statLabel">Closed Elections</div>
                     </div>
+                    <div className="card statCard border-primary/20 bg-primary/5">
+                        <div className="statIcon">🗳️</div>
+                        <div className="statNumber">
+                            {elections.reduce((sum, e) => sum + (e.totalVotes || 0), 0)}
+                        </div>
+                        <div className="statLabel">Total Votes Managed</div>
+                    </div>
                 </div>
 
                 <div className="section">
@@ -122,6 +132,33 @@ export default function OfficerDashboard() {
                             <p>Manage candidate profiles and approvals</p>
                             <button className="btn btn-primary w-full" onClick={() => router.push('/officer/candidates')}>
                                 Manage Candidates
+                            </button>
+                        </div>
+
+                        <div className="card actionCard">
+                            <div className="actionIcon">�</div>
+                            <h3>Election Results</h3>
+                            <p>Monitor live vote counts and final results</p>
+                            <button className="btn btn-primary w-full" onClick={() => router.push('/officer/results')}>
+                                View Results
+                            </button>
+                        </div>
+
+                        <div className="card actionCard">
+                            <div className="actionIcon">�👤</div>
+                            <h3>My Profile</h3>
+                            <p>Update your personal info and password</p>
+                            <button className="btn btn-primary w-full" onClick={() => router.push('/profile')}>
+                                View Profile
+                            </button>
+                        </div>
+
+                        <div className="card actionCard">
+                            <div className="actionIcon">✅</div>
+                            <h3>Verify Voters</h3>
+                            <p>Manually verify voter accounts for voting</p>
+                            <button className="btn btn-primary w-full" onClick={() => router.push('/officer/voters')}>
+                                Verify Voters
                             </button>
                         </div>
                     </div>

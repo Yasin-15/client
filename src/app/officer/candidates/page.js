@@ -107,7 +107,7 @@ export default function CandidateManagement() {
             fetchCandidates(selectedElection);
             setTimeout(() => setSuccessMessage(''), 3000);
         } catch (err) {
-            setError(err.response?.data?.message || 'Only admins can approve candidates');
+            setError(err.response?.data?.message || 'Failed to approve candidate');
         }
     };
 
@@ -245,7 +245,7 @@ export default function CandidateManagement() {
                                             </span>
                                         </td>
                                         <td className="actionButtons">
-                                            {user.role === 'admin' && !candidate.isApproved && (
+                                            {(user.role === 'admin' || user.role === 'election_officer') && !candidate.isApproved && (
                                                 <button
                                                     onClick={() => handleApprove(candidate._id)}
                                                     className="actionBtn bg-green-50 text-green-600 hover:bg-green-600"

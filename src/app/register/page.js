@@ -201,6 +201,11 @@ export default function Register() {
                                 Sign in here
                             </a>
                         </p>
+                        <div className="mt-4">
+                            <a href="/" className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">
+                                ← Back to Home
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

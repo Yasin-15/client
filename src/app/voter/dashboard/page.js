@@ -113,6 +113,14 @@ export default function VoterDashboard() {
                                 )}
                             </span>
                         </div>
+                        <div className="pt-4 border-t border-gray-100">
+                            <button
+                                onClick={() => router.push('/profile')}
+                                className="btn btn-outline w-full md:w-auto"
+                            >
+                                👤 Edit Profile & Password
+                            </button>
+                        </div>
                     </div>
                 </div>
 

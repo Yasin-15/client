@@ -189,6 +189,15 @@ export default function AdminDashboard() {
                         </div>
 
                         <div className="card actionCard">
+                            <div className="actionIcon">🛡️</div>
+                            <h3>Election Officers</h3>
+                            <p>Manage staff roles and monitor activity</p>
+                            <button className="btn btn-primary w-full" onClick={() => router.push('/admin/officers')}>
+                                Manage Officers
+                            </button>
+                        </div>
+
+                        <div className="card actionCard">
                             <div className="actionIcon">🗳️</div>
                             <h3>View Elections</h3>
                             <p>Monitor and manage all elections</p>
@@ -203,6 +212,24 @@ export default function AdminDashboard() {
                             <p>View system activity and security logs</p>
                             <button className="btn btn-primary w-full" onClick={() => router.push('/admin/audit-logs')}>
                                 View Logs
+                            </button>
+                        </div>
+
+                        <div className="card actionCard">
+                            <div className="actionIcon">⚙️</div>
+                            <h3>Settings</h3>
+                            <p>System configurations</p>
+                            <button className="btn btn-primary w-full" onClick={() => router.push('/admin/settings')}>
+                                System Settings
+                            </button>
+                        </div>
+
+                        <div className="card actionCard">
+                            <div className="actionIcon">👤</div>
+                            <h3>Profile</h3>
+                            <p>Manage your account</p>
+                            <button className="btn btn-primary w-full" onClick={() => router.push('/profile')}>
+                                View Profile
                             </button>
                         </div>
                     </div>
