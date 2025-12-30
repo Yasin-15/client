@@ -89,7 +89,7 @@ export default function Register() {
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
-                                placeholder="John Doe"
+                                placeholder="Your Name"
                             />
                         </div>
 
@@ -103,7 +103,7 @@ export default function Register() {
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
-                                placeholder="your.email@example.com"
+                                placeholder="Your Email"
                             />
                         </div>
 
@@ -118,7 +118,7 @@ export default function Register() {
                                     value={formData.voterId}
                                     onChange={handleChange}
                                     required
-                                    placeholder="VOTER001"
+                                    placeholder="Your Voter ID"
                                 />
                             </div>
 
@@ -132,7 +132,7 @@ export default function Register() {
                                     value={formData.nationalId}
                                     onChange={handleChange}
                                     required
-                                    placeholder="1234567890"
+                                    placeholder="Your National/Student ID"
                                 />
                             </div>
                         </div>
@@ -146,7 +146,7 @@ export default function Register() {
                                 className="form-input"
                                 value={formData.phone}
                                 onChange={handleChange}
-                                placeholder="+1234567890"
+                                placeholder="Your Phone Number"
                             />
                         </div>
 
