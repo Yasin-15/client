@@ -63,9 +63,15 @@ export default function Register() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center p-4">
+        <div
+            className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat"
+            style={{
+                backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('/auth-bg.png')`,
+                backgroundColor: '#0f172a'
+            }}
+        >
             <div className="w-full max-w-2xl">
-                <div className="card max-h-[90vh] overflow-y-auto animate-fade-in">
+                <div className="card max-h-[90vh] overflow-y-auto animate-fade-in !bg-white/90 !backdrop-blur-md border border-white/20">
                     <div className="text-center mb-8">
                         <div className="text-6xl mb-4">🗳️</div>
                         <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h1>
