@@ -45,15 +45,10 @@ export default function Login() {
     };
 
     return (
-        <div
-            className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat"
-            style={{
-                backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('/auth-bg.png')`,
-                backgroundColor: '#0f172a'
-            }}
-        >
-            <div className="w-full max-w-md">
-                <div className="card animate-fade-in !bg-white/90 !backdrop-blur-md border border-white/20">
+        <div className="min-h-screen flex">
+            {/* Left Side - Form */}
+            <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-gray-50 overflow-y-auto">
+                <div className="w-full max-w-md animate-fade-in">
                     <div className="text-center mb-8">
                         <div className="text-6xl mb-4">🗳️</div>
                         <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h1>
@@ -73,7 +68,7 @@ export default function Login() {
                                 type="email"
                                 id="email"
                                 name="email"
-                                className="form-input"
+                                className="form-input bg-white"
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
@@ -87,7 +82,7 @@ export default function Login() {
                                 type="password"
                                 id="password"
                                 name="password"
-                                className="form-input"
+                                className="form-input bg-white"
                                 value={formData.password}
                                 onChange={handleChange}
                                 required
@@ -127,15 +122,33 @@ export default function Login() {
                 </div>
             </div>
 
+            {/* Right Side - Image */}
+            <div
+                className="hidden lg:block w-1/2 bg-cover bg-center relative"
+                style={{
+                    backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), url('/auth-bg.png')`,
+                    backgroundColor: '#0f172a'
+                }}
+            >
+                <div className="absolute inset-0 flex items-center justify-center text-white p-12 text-center">
+                    <div>
+                        <h2 className="text-4xl font-bold mb-4">Secure Voting System</h2>
+                        <p className="text-lg text-gray-200">
+                            Experience a new era of democratic participation with our secure and transparent blockchain-based voting platform.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <style jsx>{`
-        @keyframes fade-in {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.6s ease-out;
-        }
-      `}</style>
+                @keyframes fade-in {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .animate-fade-in {
+                    animation: fade-in 0.6s ease-out;
+                }
+            `}</style>
         </div>
     );
 }
